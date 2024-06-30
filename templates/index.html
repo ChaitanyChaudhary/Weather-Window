@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Window</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <form action="/get_Weather_data" method="POST" class="container">
+    <div class="background-container"></div>
+
+    <div class="search-bar">
+      <input type="text" id="locationInput" name="locationInput" placeholder="Enter Location">
+      <button type="submit" id="searchButton">Search</button>
+    </div>
+    <div class="weather-info">
+      <h1 id="locationName"></h1>
+      <div class="weather-details">
+        <img id="weatherIcon" src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/63069/weather-icon-clipart-md.png" alt="Weather Icon">
+        <p id="weatherDescription"></p>
+        <span id="currentTemp"></span>
+        <span id="feelsLike"></span>
+      </div>
+      <div class="additional-info">
+        <h1>Weather Report for {{ user_location }}</h1>
+        <p>Current Date & Time: {{ current_time_date }}</p>
+        <p>Temperature: {{ wtmp }} degrees Celsius</p>
+        <p>Wind Speed: {{ wvind }} kilometer per hour</p>
+        <p>Cloud Cover: {{ cloudy }}%</p>
+        <p>Humidity: {{ humidity }}%</p>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
